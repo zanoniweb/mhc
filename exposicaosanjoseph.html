@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+<style>
+/* styles.css */body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+h1 {
+    color: #333;
+}
+.photo-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+#ladoalado img {
+      max-width: 100%;
+      height: auto;
+      margin-right: 10px;
+      overflow: hidden; /* Esconde as laterais sobrando da imagem */
+      transform: translateX(-14%); /* Ajusta a imagem na horizontal na posição desejada */
+}
+.center {
+    text-align: center;
+}
+button {
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    } 
+.my-button {
+      background-color: #199319;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+    }
+</style>
+</head>
+
+<header>
+    <div class="center">
+        <nav>
+
+            <ul> 
+              <a class="my-button" href="contatomhc.html"><button>Contato</button></a>
+              <a class="my-button" href="kidsarqueologia.html"><button>Kids Arqueologia</button></a>
+              <a class="my-button" href="materiasarqueologicas.html"><button>Materiais Arqueológicos</button></a>
+              <a class="my-button" href="index.html"><button>Museu Histórico Cambé/Pr</button></a>
+              <a class="my-button" href="quizsanjoseph.html"><button>Quiz Missão San Joseph</button></a>
+              <a class="my-button" href="videos.html"><button>Videos Arqueologia</button></a>
+            </ul>
+
+         </nav>
+        
+         <center>
+         <div id="ladoalado">
+         <img src="http://www.cambe.pr.gov.br/site/wp-content/uploads/2021/02/Brasao_Prefeitura_21-24_transp-e1628080573185.png" alt="Brasão da Prefeitura de Cambé">
+         <img src="https://d1yei2z3i6k35z.cloudfront.net/6946809/65ee07e3067dd_igrejinhacambe.jpg" alt="Página do Museu Histórico de Cambé no Facebook">
+         <img src="data:image/jpeg;base64,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" alt="Brasão Rural de Cambé">            
+         </center>
+        </header>
+        </div>
+    </div>
+<center>
+      <body>
+     <i>   
+    <div id="photo-list"></div>
+    </i>
+</center>
+    <script>
+        const photoData = [
+            {
+                id: 1,
+                title: 'Museu Histórico de Cambé/Pr',
+                description: 'Fundado em 30 de outubro de 1985 localizado na Rua Pará, 161 - Centro',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb3ac50631_museu.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+            
+            {
+                id: 2,
+                title: 'Galeria',
+                description: 'Galeria de exposição permanente do acervo arqueológico do Museu Histírico de Cambé/Pr',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb3e592279_galeria.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 3,
+                title: 'Tema da Exposição Arqueológica',
+                description: 'Misão San Joseph: O Paraná Espanhol',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb41c8d1e3_ecposicao.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 4,
+                title: '1º Espaço da galeria de exposição arqueologica',
+                description: 'Espaço apresenta estruturas nas quais o acervo que está em exposição permanente, porém, protegido dentro de extruturas feitas de chapas de vidro, o que protege o acervo em exposição',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb54f617ac_disposicaoacervoentrada.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 5,
+                title: 'Cestarias',
+                description: 'Contem 8 unidades de cestarias conteporâneas',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecdce4cd825_Semttulo.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 6,
+                title: '1º conjunto de objetos cerâmicos e líticos expostos',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb5a1e67d1_primeiroconj.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 7,
+                title: '1º Conjunto de objetos expostos, mas apresentando apenas os fragmentos do campo direito da parte inferior da exposição',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb5d261c25_lotedez.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 8,
+                title: '1º Conjunto de objetos expostos, mas apresentando apenas os fragmentos do campo central da parte inferior da exposição',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb5ea1d4ab_lotedoze.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 9,
+                title: '1º Conjunto de objetos expostos, mas apresentando apenas três vasilhas em cerâmica',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb60d43c5b_terceiroconj.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 10,
+                title: 'Telhas',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb680c8374_telhas.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 11,
+                title: 'Conjunto com duas cerâmicas',
+                description: 'Sem identificação',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb6caa6aea_lotedois.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 12,
+                title: '2º Espaço da galeria de exposição arqueológica',
+                description: 'Espaço apresenta estturas nas quais o acervo que está em exposição permanente, porém, protegido dentro de extruturas feitas de chapas de vidro, o que protege o acervo em exposição',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb7d14cc0c_disposicaoacervomeioedireita.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 13,
+                title: 'Ilustração Arqueológica',
+                description: 'Ilustração arqueológica catalogando 10 (dez) exemplares em exposição',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3dbca70e2a_ilvasilhas.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+
+            {
+                id: '14',
+                title: 'Conjutno de 10 (dez) exemplares',
+                description: 'Objetos de cerâmica e de pedra',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb8015a28b_segumdoconj.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 15,
+                title: 'Conjunto de 02 (dois) exemplares',
+                description: 'Exemplar da direita procedência vasilha de cerâmica, Local da Procedência:; Exemplar da esquerda vasilha de cerâmica procedência: Paulo Teodoro Local da Procedência: 1º de Maio',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb8670e6cc_loteum.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 16,
+                title: 'Exemplar de cerâmica parcialmente restaurado',
+                description: 'Exemplar de vassilha de cerâmica procedência: João Sabaine Local da Procedência: km 9',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb88fdebbe_lotequatro.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 17,
+                title: 'Exemplar de cerâmica',
+                description: 'Cerâmicas com características atribuídas à Missão Jesuítica San Joseph (1625 – 1631). Procedência: Fazenda Santa Dalmácia.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb8c1e0a3d_lotetres.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 18,
+                title: '3º Espaço da galeria de exposição arqueológica',
+                description: 'Espaço apresenta estturas nas quais o acervo que está em exposição permanente, porém, protegido dentro de extruturas feitas de chapas de vidro, o que protege o acervo em exposição',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb902c84ef_disposicaoacervomeioeesquerdo.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 19,
+                title: 'Ilustração de Mãos de Pilão',
+                description: 'As mulheres indígenas utilizam o utensilio para macerar alimentos',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3dbebc47bc_ilmaopilao.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 20,
+                title: 'Mãos de Pilão',
+                description: 'Acervo de 07 (sete) mãos de pilão de material lítico em visão frontal',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb93792157_maosdemoum.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 21,
+                title: 'Mãos de Pilão',
+                description: 'Acervo de 07 (sete) mãos de pilão de material lítico em visão de perfil',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb92455f16_maosdemodois.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 22,
+                title: 'Ilustração de Machados de Pedra',
+                description: 'A ilustração demonstra indígenas masculinos trabalhando a peça em pedra para transforma-la em um machado',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3dbdb8cf0e_ilmachado.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 23,
+                title: 'Machados',
+                description: 'Acervo de 17 (dezessete) mãos de pilão de material lítico em visão de perfil',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecb94c1eb3d_machados.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 24,
+                title: 'Penúltimo conjunto de exemplares de cerâmica',
+                description: 'Conjunto compsoto por 10 (dez) fragmentos em cerâmica oirundos do sítio arqueológico San Joseph',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecba45a8b5f_lotecinco.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+
+            {
+                id: 25,
+                title: 'Penultimo conjunto de exemplares de cerâmica: seleção de fragmentos corrugadas',
+                description: 'Amostra de cerâmicas corrugadas. Decoração feita antes ou depois da queima da cerâmica, com pigmentos minerais ou vegetais, diretamente sobre a superfície ou sobre o engobo. As cores predominantes em ambas as fases são: vermelho, preto, cinza e branco.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3d9296c172_cercorrugadas.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 26,
+                title: 'Penúltimo conjunto com exemplar de cerâmica roletada',
+                description: 'Pequena amostra de cerâmica roletada',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3da54e41a3_cerroletada.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 27,
+                title: 'Penúltimo conjunto de exemplares de cerâmicas',
+                description: 'Amostras de cerâmicas pintadas.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecba606a91b_loteoito.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 28,
+                title: 'Último conjunto de exemplares de cerâmica',
+                description: 'Conjunto compsoto por 21 (vinto) objetos em cerâmica sendo fragmentos ou não',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecba9581487_loteseis.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 29,
+                title: 'Recorte de fragmentos de cerâmicas',
+                description: 'Ampliação dos fragmentos de cerâmicas unguladas. Tipo de decoração que consiste em imprimir com a ponta das unhas marcas agrupadas em diversas posições na superfície da vasilha.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65f3d576a4d1d_amostraungulada.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+
+            {
+                id: 30,
+                title: 'Último conjunto de exemplares de cerâmica: seleção de fragmentos',
+                description: 'Amostra de cerâmica escovada. Feita a partir de instrumentos com pontas múltiplas, (exemplo: galhos, ossos, palhas, etc), na superfície ainda úmida da vasilha.',
+                imageUrl: 'https://d1yei2z3i6k35z.cloudfront.net/6946809/65ecbae8ceaba_lotesete.jpg',
+                author: 'Museu Histórico de Cambé/Pr'
+            },
+        ];
+
+        const photoList = document.getElementById('photo-list');
+
+        function displayPhotos() {
+            photoData.forEach(photo => {
+                const photoCard = document.createElement('div');
+                photoCard.classList.add('photo-card');
+                photoCard.innerHTML = `
+                    <h2>${photo.title}</h2>
+                    <p>${photo.description}</p>
+                    <img src="${photo.imageUrl}" alt="${photo.title}">
+                    <p>Autor: ${photo.author}</p>
+                `;
+                photoList.appendChild(photoCard);
+            });
+        }
+
+        displayPhotos();
+    </script>
+<center>
+<i>    
+<footer>
+<p>Site desenvolvido por Juliano <img src="https://d1yei2z3i6k35z.cloudfront.net/6946809/65e45ac72773e_zanoni.1.png" alt="Logo de Juliano Zanoni"></p>
+</footer>
+</i>
+<center>
+</body>
+</html>
